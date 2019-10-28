@@ -1,9 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import {
+  MatToolbarModule,
+  MatButtonModule,
+} from '@angular/material';
+import { RouterModule } from '@angular/router';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BodyComponent } from './components/body/body.component';
+
+const routes = [
+  {path: '**', component: AppComponent},
+];
 
 @NgModule({
   declarations: [
@@ -12,7 +22,10 @@ import { BodyComponent } from './components/body/body.component';
     BodyComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routes),
+    MatToolbarModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
