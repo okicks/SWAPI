@@ -1,4 +1,4 @@
-export interface People{
+export interface People {
     Name: string;
     Height?: number;
     Mass?: number;
@@ -8,10 +8,10 @@ export interface People{
     BirthYear?: string;
     Gender?: string;
     Homeworld?: string;
-    Films: string;
+    Films: Array<string>;
     Species: string;
-    Vehicles?: string;
-    Starships?: string;
+    Vehicles?: Array<string>;
+    Starships?: Array<string>;
     CreatedUtc: Date;
     EditedUtc: Date;
     Url: string;
