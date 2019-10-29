@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SwService } from 'src/app/services/sw.service';
+import { Film } from 'src/app/models/Film';
+import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-films',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilmsComponent implements OnInit {
 
-  constructor() { }
+  columnNames = ['Title'];
+  dataSource: MatTableDataSource<Film>;
+
+  constructor(private swService: SwService) { }
 
   ngOnInit() {
+    this.swService.getFilms().subscribe((films: Film[]) => {
+      this.dataSource = new MatTableDataSource<Film>(films);
+    });
   }
 
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SwService } from 'src/app/services/sw.service';
+import { Ship } from 'src/app/models/Ship';
+import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-ships',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShipsComponent implements OnInit {
 
-  constructor() { }
+  columnNames = ['Name'];
+  dataSource: MatTableDataSource<Ship>;
+
+  constructor(private swService: SwService) { }
 
   ngOnInit() {
+    this.swService.getFilms().subscribe((ships: Ship[]) => {
+      this.dataSource = new MatTableDataSource<Ship>(ships);
+    });
   }
 
 }
