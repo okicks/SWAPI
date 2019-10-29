@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+/* https://angular.io/guide/http */
 
 import {
   MatToolbarModule,
@@ -31,7 +33,8 @@ const routes = [
     BrowserModule,
     RouterModule.forRoot(routes),
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
