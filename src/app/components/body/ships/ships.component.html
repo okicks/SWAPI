@@ -6,11 +6,9 @@
         <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
-        <ng-container matColumnDef="Title">
-            <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
-            <mat-cell *matCellDef="let note;">
-                <i class="material-icons">{{ship.name}}</i>
-            </mat-cell>
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+            <mat-cell *matCellDef="let ship;">{{ship.name}}</mat-cell>
         </ng-container>
     </mat-table>
 </div>

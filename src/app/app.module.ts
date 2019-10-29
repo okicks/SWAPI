@@ -8,6 +8,7 @@ import {
   MatInputModule,
   MatTableModule
 } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -19,10 +20,10 @@ import { FilmsComponent } from './components/body/films/films.component';
 import { SwService } from './services/sw.service';
 
 const routes = [
-  {path: '**', component: BodyComponent},
   {path: 'films', component: FilmsComponent},
   {path: 'people', component: PeopleComponent},
   {path: 'ships', component: ShipsComponent},
+  {path: '**', component: BodyComponent}
 ];
 
 @NgModule({
@@ -41,7 +42,8 @@ const routes = [
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule
   ],
   providers: [SwService],
   bootstrap: [AppComponent]

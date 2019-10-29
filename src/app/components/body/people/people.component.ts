@@ -10,7 +10,7 @@ import { MatTableDataSource } from '@angular/material';
 })
 export class PeopleComponent implements OnInit {
 
-  columnNames = ['Name'];
+  columnNames = ['name'];
   dataSource: MatTableDataSource<Person>;
 
   constructor(private swService: SwService) { }

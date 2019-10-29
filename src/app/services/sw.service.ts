@@ -12,14 +12,14 @@ export class SwService {
   constructor(private http: HttpClient) { }
 
   getPeople(){
-    return this.http.get(`${Api}/people`);
+    return this.http.get(`${Api}/people/`);
   }
 
   getFilms(){
-    return this.http.get(`${Api}/films`);
+    return this.http.get(`${Api}/films/`);
   }
 
   getShips(){
-    return this.http.get(`${Api}/starships`);
+    return this.http.get(`${Api}/starships/`);
   }
 }
