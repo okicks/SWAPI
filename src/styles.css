@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+/* https://blog.thoughtram.io/angular/2017/05/23/custom-themes-with-angular-material.html
+    we could make a custome theme with lightsabre colors, etc  */ 
+@import "../node_modules/@angular/material/prebuilt-themes/purple-green.css";
+
+body, html {
+    margin: 1;
+    padding: 1;
+    font-family: 'Roboto', 'Arial', sans-serif;
+}
