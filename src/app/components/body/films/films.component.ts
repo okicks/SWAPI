@@ -18,6 +18,8 @@ export class FilmsComponent implements OnInit {
   ngOnInit() {
     this.swService.getFilms().subscribe((films: Film[]) => {
       this.dataSource = new MatTableDataSource<Film>(films);
+      console.log(this.dataSource);
+      console.log(films);
     });
   }
 
