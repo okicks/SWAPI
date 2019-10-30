@@ -12,12 +12,14 @@ export class ShipsComponent implements OnInit {
 
   columnNames = ['name'];
   dataSource: MatTableDataSource<Ship>;
+  ships: Ship[];
 
   constructor(private swService: SwService) { }
 
   ngOnInit() {
-    this.swService.getFilms().subscribe((ships: Ship[]) => {
-      this.dataSource = new MatTableDataSource<Ship>(ships);
+    this.swService.getFilms().subscribe(data => {
+      this.ships = data['results'];
+      this.dataSource = new MatTableDataSource<Ship>(this.ships);
     });
   }
 

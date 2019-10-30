@@ -12,12 +12,14 @@ export class PeopleComponent implements OnInit {
 
   columnNames = ['name'];
   dataSource: MatTableDataSource<Person>;
+  people: Person[];
 
   constructor(private swService: SwService) { }
 
   ngOnInit() {
-    this.swService.getFilms().subscribe((people: Person[]) => {
-      this.dataSource = new MatTableDataSource<Person>(people);
+    this.swService.getFilms().subscribe(data => {
+      this.people = data['results'];
+      this.dataSource = new MatTableDataSource<Person>(this.people);
     });
   }
 

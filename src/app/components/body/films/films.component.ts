@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SwService } from 'src/app/services/sw.service';
 import { Film } from 'src/app/models/Film';
-import { MatTableDataSource } from '@angular/material';
+import { MatTableDataSource, throwMatDialogContentAlreadyAttachedError } from '@angular/material';
 
 @Component({
   selector: 'app-films',
@@ -12,15 +12,14 @@ export class FilmsComponent implements OnInit {
 
   columnNames = ['title'];
   dataSource: MatTableDataSource<Film>;
+  films: Film[];
 
   constructor(private swService: SwService) { }
 
   ngOnInit() {
-    this.swService.getFilms().subscribe((films: Film[]) => {
-      this.dataSource = new MatTableDataSource<Film>(films);
-      console.log(this.dataSource);
-      console.log(films);
+    this.swService.getFilms().subscribe(data => {
+      this.films = data['results'];
+      this.dataSource = new MatTableDataSource<Film>(this.films);
     });
   }
-
 }
