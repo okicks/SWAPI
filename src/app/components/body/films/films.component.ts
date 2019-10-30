@@ -17,9 +17,10 @@ export class FilmsComponent implements OnInit {
   constructor(private swService: SwService) { }
 
   ngOnInit() {
-    this.swService.getFilms().subscribe(data => {
+      this.swService.getFilms().subscribe(data => {
       this.films = data['results'];
       this.dataSource = new MatTableDataSource<Film>(this.films);
     });
+
   }
 }

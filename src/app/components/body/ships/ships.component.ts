@@ -17,7 +17,7 @@ export class ShipsComponent implements OnInit {
   constructor(private swService: SwService) { }
 
   ngOnInit() {
-    this.swService.getFilms().subscribe(data => {
+    this.swService.getShips().subscribe(data => {
       this.ships = data['results'];
       this.dataSource = new MatTableDataSource<Ship>(this.ships);
     });

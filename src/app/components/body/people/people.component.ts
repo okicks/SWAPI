@@ -17,7 +17,7 @@ export class PeopleComponent implements OnInit {
   constructor(private swService: SwService) { }
 
   ngOnInit() {
-    this.swService.getFilms().subscribe(data => {
+    this.swService.getPeople().subscribe(data => {
       this.people = data['results'];
       this.dataSource = new MatTableDataSource<Person>(this.people);
     });
