@@ -11,15 +11,27 @@ export class SwService {
 
   constructor(private http: HttpClient) { }
 
-  getPeople(){
+  getPeople() {
     return this.http.get(`${Api}/people/`);
   }
 
-  getFilms(){
+  getPeopleSearch(pram: string) {
+    return this.http.get(`${Api}/people/?search=${pram}`);
+  }
+
+  getFilms() {
     return this.http.get(`${Api}/films/`);
   }
 
-  getShips(){
+  getFilmsSearch(pram: string) {
+    return this.http.get(`${Api}/films/?search=${pram}`);
+  }
+
+  getShips() {
     return this.http.get(`${Api}/starships/`);
+  }
+
+  getShipsSearch(pram: string) {
+    return this.http.get(`${Api}/starships/?search=${pram}`);
   }
 }

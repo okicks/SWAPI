@@ -1,7 +1,10 @@
-<h1>People</h1>
+<h1>Ship Search</h1>
 <hr />
 
-<button mat-raised-button class="nav-btn" routerLink="/people/search">Search</button>
+<div [formGroup]="searchForm">
+    <input matInput placeholder="Search" formControlName="search" type="text" />
+    <button mat-raised-button class="nav-btn" type="submit" (click)="onSubmit()">Search</button>
+</div>
 
 <div>
     <mat-table #table [dataSource]="dataSource">
@@ -10,7 +13,7 @@
 
         <ng-container matColumnDef="name">
             <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
-            <mat-cell *matCellDef="let person;">{{person.name}}</mat-cell>
+            <mat-cell *matCellDef="let ship;">{{ship.name}}</mat-cell>
         </ng-container>
     </mat-table>
 </div>
