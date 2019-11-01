@@ -18,7 +18,7 @@ export class ShipSearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  columnNames = ['name'];
+  columnNames = ['name','model'];
   dataSource: MatTableDataSource<Ship>;
   ships: Ship[];
   searchForm: FormGroup;

@@ -10,7 +10,7 @@ import { MatTableDataSource } from '@angular/material';
 })
 export class ShipsComponent implements OnInit {
 
-  columnNames = ['name'];
+  columnNames = ['name','model'];
   dataSource: MatTableDataSource<Ship>;
   ships: Ship[];
 

@@ -1,7 +1,7 @@
 <h1>Planet Search</h1>
 <hr />
 
-<div [formGroup]="searchForm">
+<div class="input" [formGroup]="searchForm">
     <input matInput placeholder="Search" formControlName="search" type = "text"/>
     <button mat-raised-button class="nav-btn" type = "submit" (click) = "onSubmit()">Search</button>
 </div>
@@ -15,5 +15,10 @@
             <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
             <mat-cell *matCellDef="let planet;">{{planet.name}}</mat-cell>
         </ng-container>
+
+        <ng-container matColumnDef = "population">
+                <mat-header-cell *matHeaderCellDef>Population</mat-header-cell>
+                <mat-cell *matCellDef="let planet">{{planet.population}}</mat-cell>
+            </ng-container>
     </mat-table>
 </div>

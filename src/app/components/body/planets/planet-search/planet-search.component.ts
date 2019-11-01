@@ -18,7 +18,7 @@ export class PlanetSearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  columnNames = ['name'];
+  columnNames = ['name','population'];
   dataSource: MatTableDataSource<Planet>;
   planets: Planet[];
   searchForm: FormGroup;

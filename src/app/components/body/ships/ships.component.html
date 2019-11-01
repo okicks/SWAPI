@@ -12,5 +12,10 @@
             <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
             <mat-cell *matCellDef="let ship;">{{ship.name}}</mat-cell>
         </ng-container>
+
+        <ng-container matColumnDef="model">
+                <mat-header-cell *matHeaderCellDef>Model</mat-header-cell>
+                <mat-cell *matCellDef="let ship;">{{ship.model}}</mat-cell>
+        </ng-container>
     </mat-table>
 </div>

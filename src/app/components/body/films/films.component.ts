@@ -10,7 +10,7 @@ import { MatTableDataSource, throwMatDialogContentAlreadyAttachedError } from '@
 })
 export class FilmsComponent implements OnInit {
 
-  columnNames = ['title'];
+  columnNames = ['title','director'];
   dataSource: MatTableDataSource<Film>;
   films: Film[];
 

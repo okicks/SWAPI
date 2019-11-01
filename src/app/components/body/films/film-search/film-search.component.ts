@@ -15,7 +15,7 @@ export class FilmSearchComponent implements OnInit {
     this.createForm();
   }
 
-  columnNames = ['title'];
+  columnNames = ['title','director'];
   dataSource: MatTableDataSource<Film>;
   films: Film[];
   searchForm: FormGroup;

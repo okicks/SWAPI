@@ -18,7 +18,7 @@ export class PeopleSearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  columnNames = ['name'];
+  columnNames = ['name','gender'];
   dataSource: MatTableDataSource<Person>;
   people: Person[];
   searchForm: FormGroup;
