@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SwService } from 'src/app/services/sw.service';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { MatTableDataSource, MatTab } from '@angular/material';
+import { MatTableDataSource } from '@angular/material';
 import { Planet } from 'src/app/models/Planet';
 
 @Component({

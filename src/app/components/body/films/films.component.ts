@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SwService } from 'src/app/services/sw.service';
 import { Film } from 'src/app/models/Film';
-import { MatTableDataSource, throwMatDialogContentAlreadyAttachedError } from '@angular/material';
+import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-films',
